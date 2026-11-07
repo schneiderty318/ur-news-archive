@@ -74,6 +74,7 @@ function showSection(){
  const skip=document.querySelector('.skip');skip.href=isBook?'#book-search':'#reader';skip.textContent=isBook?'Skip to catalog search':'Skip to article';
  if(isBook){document.title='UR Book Repository | News & Books';if(hash.startsWith('BK-'))byId(hash)?.scrollIntoView();}
 }
+document.querySelector('.skip').addEventListener('click',event=>{event.preventDefault();const target=byId(byId('books-panel').hidden?'reader':'book-search');target.focus();target.scrollIntoView();});
 window.addEventListener('hashchange',showSection);showSection();
 })();
 </script></body></html>
