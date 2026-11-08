@@ -48,6 +48,7 @@ function render(){
 function showBook(b){
  selected=b;$('detail-id').textContent=b.id+' / '+(b.kind||'CATALOG RECORD').toUpperCase();$('detail-shelf').textContent=sectionFor(b).name.toUpperCase();
  $('detail-title').textContent=b.title;$('detail-credit').textContent=b.credit;$('detail-blurb').textContent=b.blurb;
+ $('detail-manual').hidden=b.id!=='E-020';
  $('detail-source').href=b.url;$('detail-source').textContent=b.id==='E-020'?'Watch NCP service film ↗':'Open reading source ↗';$('copy-status').textContent='';
  if(!$('book-dialog').open)$('book-dialog').showModal();document.title=b.title+' | Repository of the Mind';
 }
